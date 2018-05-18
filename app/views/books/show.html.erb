@@ -1,5 +1,6 @@
 <ul>
   <h1>Average Rating: <%= @average %></h1>
+  <h1>Highest Rating: <%= @max %></h1>
   <%= @reviews.each do |review| %>
     <li><%= review.text %> <%= review.user.name %> <%= review.rating %></li>
   <% end %>
