@@ -38,6 +38,10 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'pry'
   gem 'rspec-rails'
+  gem 'pry'
+
+  gem 'launchy'
+  gem 'shoulda-matchers'
 end
 
 group :development do
