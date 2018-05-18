@@ -6,7 +6,7 @@ describe 'user visits book show page' do
     user = User.create(name: 'bob')
     review = book.reviews.create(text: 'great', rating: 5, user: user)
 
-    visit book_show_path
+    visit book_path(book)
 
     expect(page).to have_content(review.text)
     expect(page).to have_content(user.name)
