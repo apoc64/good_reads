@@ -46,4 +46,19 @@ describe 'user visits book show page' do
 
     expect(page).to have_content("Lowest Rating: #{review2.rating}")
   end
+
+  it 'shows the full review info in the highest section' do
+    book = Book.create(title: 'Catch 22')
+    user = User.create(name: 'bob')
+    review1 = book.reviews.create(text: 'great', rating: 5, user: user)
+    review2 = book.reviews.create(text: 'OK', rating: 3, user: user)
+
+    visit book_path(book)
+
+    within('.highest') do
+      expect(page).to have_content(review1.text)
+      expect(page).to have_content(review1.user.name)
+    end
+  end
+
 end
