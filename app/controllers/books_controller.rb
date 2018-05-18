@@ -4,5 +4,6 @@ class BooksController < ApplicationController
     @reviews = book.reviews
     @average = @reviews.average(:rating)
     @max = @reviews.maximum(:rating)
+    @low = @reviews.minimum(:rating)
   end
 end
